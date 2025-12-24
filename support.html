@@ -25,6 +25,39 @@
             padding: 40px 20px;
         }
 
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            background: rgba(30, 41, 59, 0.9);
+            color: #94a3b8;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #e2e8f0;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-color: transparent;
+            color: white;
+        }
+
         header {
             text-align: center;
             margin-bottom: 50px;
@@ -147,6 +180,15 @@
             margin-bottom: 0;
         }
 
+        .faq-item a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .faq-item a:hover {
+            text-decoration: underline;
+        }
+
         .response-time {
             display: inline-block;
             background: rgba(34, 197, 94, 0.1);
@@ -156,6 +198,16 @@
             border-radius: 20px;
             font-size: 0.9rem;
             margin-top: 15px;
+        }
+
+        .card ul {
+            color: #cbd5e1;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .card li {
+            margin-bottom: 8px;
         }
 
         footer {
@@ -187,20 +239,35 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            .lang-switcher {
+                top: 10px;
+                right: 10px;
+            }
+
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('fr')" id="btn-fr">FR</button>
+        <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+
     <div class="container">
         <header>
             <div class="logo">✈️</div>
-            <h1>Support FlightLog</h1>
-            <p class="subtitle">Nous sommes là pour vous aider</p>
+            <h1 data-fr="Support FlightLog" data-en="FlightLog Support">Support FlightLog</h1>
+            <p class="subtitle" data-fr="Nous sommes là pour vous aider" data-en="We're here to help">Nous sommes là pour vous aider</p>
         </header>
 
         <div class="card">
-            <h2>📧 Contactez-nous</h2>
-            <p>Notre équipe de support est disponible pour répondre à toutes vos questions concernant l'application FlightLog.</p>
+            <h2 data-fr="📧 Contactez-nous" data-en="📧 Contact Us">📧 Contactez-nous</h2>
+            <p data-fr="Notre équipe de support est disponible pour répondre à toutes vos questions concernant l'application FlightLog." data-en="Our support team is available to answer all your questions about the FlightLog app.">Notre équipe de support est disponible pour répondre à toutes vos questions concernant l'application FlightLog.</p>
 
             <div class="contact-method">
                 <div class="contact-icon">✉️</div>
@@ -210,55 +277,73 @@
                 </div>
             </div>
 
-            <div class="response-time">⏱️ Réponse sous 24-48h</div>
+            <div class="response-time" data-fr="⏱️ Réponse sous 24-48h" data-en="⏱️ Response within 24-48h">⏱️ Réponse sous 24-48h</div>
         </div>
 
         <div class="card">
-            <h2>❓ Questions fréquentes</h2>
+            <h2 data-fr="❓ Questions fréquentes" data-en="❓ Frequently Asked Questions">❓ Questions fréquentes</h2>
 
             <div class="faq-item">
-                <h3>Comment ajouter un vol manuellement ?</h3>
-                <p>Depuis l'onglet "Journal", appuyez sur le bouton "+" en bas à droite. Vous pouvez entrer les aéroports de départ et d'arrivée, la date, et d'autres informations sur votre vol.</p>
+                <h3 data-fr="Comment ajouter un vol manuellement ?" data-en="How do I add a flight manually?">Comment ajouter un vol manuellement ?</h3>
+                <p data-fr="Depuis l'onglet \"Journal\", appuyez sur le bouton \"+\" en bas à droite. Vous pouvez entrer les aéroports de départ et d'arrivée, la date, et d'autres informations sur votre vol." data-en="From the \"Journal\" tab, tap the \"+\" button at the bottom right. You can enter departure and arrival airports, date, and other flight information.">Depuis l'onglet "Journal", appuyez sur le bouton "+" en bas à droite. Vous pouvez entrer les aéroports de départ et d'arrivée, la date, et d'autres informations sur votre vol.</p>
             </div>
 
             <div class="faq-item">
-                <h3>Comment scanner une carte d'embarquement ?</h3>
-                <p>Utilisez le bouton scanner dans l'application pour photographier le code-barres de votre carte d'embarquement. Les informations du vol seront automatiquement extraites.</p>
+                <h3 data-fr="Comment scanner une carte d'embarquement ?" data-en="How do I scan a boarding pass?">Comment scanner une carte d'embarquement ?</h3>
+                <p data-fr="Utilisez le bouton scanner dans l'application pour photographier le code-barres de votre carte d'embarquement. Les informations du vol seront automatiquement extraites." data-en="Use the scanner button in the app to photograph the barcode on your boarding pass. Flight information will be automatically extracted.">Utilisez le bouton scanner dans l'application pour photographier le code-barres de votre carte d'embarquement. Les informations du vol seront automatiquement extraites.</p>
             </div>
 
             <div class="faq-item">
-                <h3>Mes données sont-elles sécurisées ?</h3>
-                <p>Oui, vos données sont stockées de manière sécurisée et chiffrée. Nous ne partageons jamais vos informations personnelles avec des tiers. Consultez notre <a href="privacy.html">Politique de Confidentialité</a> pour plus de détails.</p>
+                <h3 data-fr="Mes données sont-elles sécurisées ?" data-en="Is my data secure?">Mes données sont-elles sécurisées ?</h3>
+                <p data-fr="Oui, vos données sont stockées de manière sécurisée et chiffrée. Nous ne partageons jamais vos informations personnelles avec des tiers. Consultez notre <a href='privacy.html'>Politique de Confidentialité</a> pour plus de détails." data-en="Yes, your data is stored securely and encrypted. We never share your personal information with third parties. See our <a href='privacy.html'>Privacy Policy</a> for more details.">Oui, vos données sont stockées de manière sécurisée et chiffrée. Nous ne partageons jamais vos informations personnelles avec des tiers. Consultez notre <a href="privacy.html">Politique de Confidentialité</a> pour plus de détails.</p>
             </div>
 
             <div class="faq-item">
-                <h3>Comment supprimer mon compte ?</h3>
-                <p>Vous pouvez supprimer votre compte depuis les paramètres de l'application (Profil > Paramètres > Supprimer mon compte). Cette action est irréversible et supprimera toutes vos données.</p>
+                <h3 data-fr="Comment supprimer mon compte ?" data-en="How do I delete my account?">Comment supprimer mon compte ?</h3>
+                <p data-fr="Vous pouvez supprimer votre compte depuis les paramètres de l'application (Profil > Paramètres > Supprimer mon compte). Cette action est irréversible et supprimera toutes vos données." data-en="You can delete your account from the app settings (Profile > Settings > Delete my account). This action is irreversible and will delete all your data.">Vous pouvez supprimer votre compte depuis les paramètres de l'application (Profil > Paramètres > Supprimer mon compte). Cette action est irréversible et supprimera toutes vos données.</p>
             </div>
 
             <div class="faq-item">
-                <h3>L'application fonctionne-t-elle hors ligne ?</h3>
-                <p>Oui, vous pouvez consulter vos vols enregistrés hors ligne. La synchronisation se fera automatiquement lorsque vous serez à nouveau connecté à Internet.</p>
+                <h3 data-fr="L'application fonctionne-t-elle hors ligne ?" data-en="Does the app work offline?">L'application fonctionne-t-elle hors ligne ?</h3>
+                <p data-fr="Oui, vous pouvez consulter vos vols enregistrés hors ligne. La synchronisation se fera automatiquement lorsque vous serez à nouveau connecté à Internet." data-en="Yes, you can view your saved flights offline. Synchronization will happen automatically when you're back online.">Oui, vous pouvez consulter vos vols enregistrés hors ligne. La synchronisation se fera automatiquement lorsque vous serez à nouveau connecté à Internet.</p>
             </div>
         </div>
 
         <div class="card">
-            <h2>🐛 Signaler un bug</h2>
-            <p>Vous avez rencontré un problème technique ? Envoyez-nous un email avec :</p>
-            <ul style="color: #cbd5e1; margin-left: 20px; margin-top: 10px;">
-                <li>Une description du problème</li>
-                <li>Les étapes pour reproduire le bug</li>
-                <li>Votre modèle d'appareil et version iOS</li>
-                <li>Une capture d'écran si possible</li>
+            <h2 data-fr="🐛 Signaler un bug" data-en="🐛 Report a Bug">🐛 Signaler un bug</h2>
+            <p data-fr="Vous avez rencontré un problème technique ? Envoyez-nous un email avec :" data-en="Encountered a technical issue? Send us an email with:">Vous avez rencontré un problème technique ? Envoyez-nous un email avec :</p>
+            <ul>
+                <li data-fr="Une description du problème" data-en="A description of the problem">Une description du problème</li>
+                <li data-fr="Les étapes pour reproduire le bug" data-en="Steps to reproduce the bug">Les étapes pour reproduire le bug</li>
+                <li data-fr="Votre modèle d'appareil et version iOS" data-en="Your device model and iOS version">Votre modèle d'appareil et version iOS</li>
+                <li data-fr="Une capture d'écran si possible" data-en="A screenshot if possible">Une capture d'écran si possible</li>
             </ul>
         </div>
     </div>
 
     <footer>
-        <p>© 2024 FlightLog. Tous droits réservés.</p>
+        <p>© 2024 FlightLog. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
         <p style="margin-top: 10px;">
-            <a href="privacy.html">Politique de Confidentialité</a>
+            <a href="privacy.html" data-fr="Politique de Confidentialité" data-en="Privacy Policy">Politique de Confidentialité</a>
         </p>
     </footer>
+
+    <script>
+        function setLang(lang) {
+            localStorage.setItem('flightlog-lang', lang);
+            document.documentElement.lang = lang;
+
+            document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+        }
+
+        const savedLang = localStorage.getItem('flightlog-lang') ||
+                         (navigator.language.startsWith('fr') ? 'fr' : 'en');
+        setLang(savedLang);
+    </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de Confidentialité - FlightLog</title>
+    <title>Privacy Policy - FlightLog</title>
     <style>
         * {
             margin: 0;
@@ -23,6 +23,39 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
+        }
+
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            background: rgba(30, 41, 59, 0.9);
+            color: #94a3b8;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #e2e8f0;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-color: transparent;
+            color: white;
         }
 
         header {
@@ -201,137 +234,152 @@
             th, td {
                 padding: 8px;
             }
+
+            .lang-switcher {
+                top: 10px;
+                right: 10px;
+            }
+
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('fr')" id="btn-fr">FR</button>
+        <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+
     <div class="container">
         <header>
             <div class="logo">✈️</div>
-            <h1>Politique de Confidentialité</h1>
-            <p class="subtitle">FlightLog - Application de suivi de vols</p>
-            <div class="last-updated">Dernière mise à jour : Décembre 2024</div>
+            <h1 data-fr="Politique de Confidentialité" data-en="Privacy Policy">Politique de Confidentialité</h1>
+            <p class="subtitle" data-fr="FlightLog - Application de suivi de vols" data-en="FlightLog - Flight Tracking App">FlightLog - Application de suivi de vols</p>
+            <div class="last-updated" data-fr="Dernière mise à jour : Décembre 2024" data-en="Last updated: December 2024">Dernière mise à jour : Décembre 2024</div>
         </header>
 
         <div class="card">
-            <h2>📋 Introduction</h2>
-            <p>Chez FlightLog, nous accordons une grande importance à la protection de vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre application.</p>
-            <p>En utilisant FlightLog, vous acceptez les pratiques décrites dans cette politique.</p>
+            <h2 data-fr="📋 Introduction" data-en="📋 Introduction">📋 Introduction</h2>
+            <p data-fr="Chez FlightLog, nous accordons une grande importance à la protection de vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre application." data-en="At FlightLog, we place great importance on protecting your personal data. This privacy policy explains how we collect, use, and protect your information when you use our app.">Chez FlightLog, nous accordons une grande importance à la protection de vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre application.</p>
+            <p data-fr="En utilisant FlightLog, vous acceptez les pratiques décrites dans cette politique." data-en="By using FlightLog, you agree to the practices described in this policy.">En utilisant FlightLog, vous acceptez les pratiques décrites dans cette politique.</p>
         </div>
 
         <div class="card">
-            <h2>📊 Données collectées</h2>
-            <p>Nous collectons les types de données suivants :</p>
+            <h2 data-fr="📊 Données collectées" data-en="📊 Data Collected">📊 Données collectées</h2>
+            <p data-fr="Nous collectons les types de données suivants :" data-en="We collect the following types of data:">Nous collectons les types de données suivants :</p>
 
             <table>
                 <tr>
-                    <th>Type de données</th>
-                    <th>Finalité</th>
+                    <th data-fr="Type de données" data-en="Data Type">Type de données</th>
+                    <th data-fr="Finalité" data-en="Purpose">Finalité</th>
                 </tr>
                 <tr>
-                    <td>Email et nom</td>
-                    <td>Création et gestion de votre compte</td>
+                    <td data-fr="Email et nom" data-en="Email and name">Email et nom</td>
+                    <td data-fr="Création et gestion de votre compte" data-en="Account creation and management">Création et gestion de votre compte</td>
                 </tr>
                 <tr>
-                    <td>Informations de vol</td>
-                    <td>Enregistrement et affichage de votre historique de vols</td>
+                    <td data-fr="Informations de vol" data-en="Flight information">Informations de vol</td>
+                    <td data-fr="Enregistrement et affichage de votre historique de vols" data-en="Recording and displaying your flight history">Enregistrement et affichage de votre historique de vols</td>
                 </tr>
                 <tr>
-                    <td>Photos (optionnel)</td>
-                    <td>Association de souvenirs à vos vols</td>
+                    <td data-fr="Photos (optionnel)" data-en="Photos (optional)">Photos (optionnel)</td>
+                    <td data-fr="Association de souvenirs à vos vols" data-en="Associating memories with your flights">Association de souvenirs à vos vols</td>
                 </tr>
                 <tr>
-                    <td>Position (optionnel)</td>
-                    <td>Suivi des vols en temps réel</td>
+                    <td data-fr="Position (optionnel)" data-en="Location (optional)">Position (optionnel)</td>
+                    <td data-fr="Suivi des vols en temps réel" data-en="Real-time flight tracking">Suivi des vols en temps réel</td>
                 </tr>
             </table>
 
             <div class="highlight-box">
-                <p>✅ Nous ne collectons que les données strictement nécessaires au fonctionnement de l'application.</p>
+                <p data-fr="✅ Nous ne collectons que les données strictement nécessaires au fonctionnement de l'application." data-en="✅ We only collect data strictly necessary for the app to function.">✅ Nous ne collectons que les données strictement nécessaires au fonctionnement de l'application.</p>
             </div>
         </div>
 
         <div class="card">
-            <h2>🔐 Utilisation des données</h2>
-            <p>Vos données sont utilisées exclusivement pour :</p>
+            <h2 data-fr="🔐 Utilisation des données" data-en="🔐 Data Usage">🔐 Utilisation des données</h2>
+            <p data-fr="Vos données sont utilisées exclusivement pour :" data-en="Your data is used exclusively for:">Vos données sont utilisées exclusivement pour :</p>
             <ul>
-                <li>Vous permettre d'accéder à votre compte et à vos vols</li>
-                <li>Synchroniser vos données entre vos appareils</li>
-                <li>Générer des statistiques personnelles sur vos voyages</li>
-                <li>Améliorer l'expérience utilisateur de l'application</li>
+                <li data-fr="Vous permettre d'accéder à votre compte et à vos vols" data-en="Allowing you to access your account and flights">Vous permettre d'accéder à votre compte et à vos vols</li>
+                <li data-fr="Synchroniser vos données entre vos appareils" data-en="Syncing your data across your devices">Synchroniser vos données entre vos appareils</li>
+                <li data-fr="Générer des statistiques personnelles sur vos voyages" data-en="Generating personal statistics about your travels">Générer des statistiques personnelles sur vos voyages</li>
+                <li data-fr="Améliorer l'expérience utilisateur de l'application" data-en="Improving the app's user experience">Améliorer l'expérience utilisateur de l'application</li>
             </ul>
 
             <div class="highlight-box">
-                <p>✅ Nous ne vendons jamais vos données personnelles à des tiers.</p>
+                <p data-fr="✅ Nous ne vendons jamais vos données personnelles à des tiers." data-en="✅ We never sell your personal data to third parties.">✅ Nous ne vendons jamais vos données personnelles à des tiers.</p>
             </div>
         </div>
 
         <div class="card">
-            <h2>🍪 Services tiers</h2>
-            <p>FlightLog utilise les services tiers suivants :</p>
+            <h2 data-fr="🍪 Services tiers" data-en="🍪 Third-Party Services">🍪 Services tiers</h2>
+            <p data-fr="FlightLog utilise les services tiers suivants :" data-en="FlightLog uses the following third-party services:">FlightLog utilise les services tiers suivants :</p>
             <ul>
-                <li><strong>Supabase</strong> : Hébergement sécurisé de vos données (conforme RGPD)</li>
-                <li><strong>Apple Sign In</strong> : Authentification sécurisée via votre compte Apple</li>
-                <li><strong>Google Sign In</strong> : Authentification sécurisée via votre compte Google</li>
+                <li data-fr="<strong>Supabase</strong> : Hébergement sécurisé de vos données (conforme RGPD)" data-en="<strong>Supabase</strong>: Secure hosting of your data (GDPR compliant)"><strong>Supabase</strong> : Hébergement sécurisé de vos données (conforme RGPD)</li>
+                <li data-fr="<strong>Apple Sign In</strong> : Authentification sécurisée via votre compte Apple" data-en="<strong>Apple Sign In</strong>: Secure authentication via your Apple account"><strong>Apple Sign In</strong> : Authentification sécurisée via votre compte Apple</li>
+                <li data-fr="<strong>Google Sign In</strong> : Authentification sécurisée via votre compte Google" data-en="<strong>Google Sign In</strong>: Secure authentication via your Google account"><strong>Google Sign In</strong> : Authentification sécurisée via votre compte Google</li>
             </ul>
-            <p>Ces services sont soumis à leurs propres politiques de confidentialité.</p>
+            <p data-fr="Ces services sont soumis à leurs propres politiques de confidentialité." data-en="These services are subject to their own privacy policies.">Ces services sont soumis à leurs propres politiques de confidentialité.</p>
         </div>
 
         <div class="card">
-            <h2>🛡️ Sécurité des données</h2>
-            <p>Nous mettons en œuvre des mesures de sécurité robustes pour protéger vos données :</p>
+            <h2 data-fr="🛡️ Sécurité des données" data-en="🛡️ Data Security">🛡️ Sécurité des données</h2>
+            <p data-fr="Nous mettons en œuvre des mesures de sécurité robustes pour protéger vos données :" data-en="We implement robust security measures to protect your data:">Nous mettons en œuvre des mesures de sécurité robustes pour protéger vos données :</p>
             <ul>
-                <li>Chiffrement des données en transit (HTTPS/TLS)</li>
-                <li>Chiffrement des données au repos</li>
-                <li>Authentification sécurisée</li>
-                <li>Accès restreint aux données</li>
+                <li data-fr="Chiffrement des données en transit (HTTPS/TLS)" data-en="Data encryption in transit (HTTPS/TLS)">Chiffrement des données en transit (HTTPS/TLS)</li>
+                <li data-fr="Chiffrement des données au repos" data-en="Data encryption at rest">Chiffrement des données au repos</li>
+                <li data-fr="Authentification sécurisée" data-en="Secure authentication">Authentification sécurisée</li>
+                <li data-fr="Accès restreint aux données" data-en="Restricted data access">Accès restreint aux données</li>
             </ul>
         </div>
 
         <div class="card">
-            <h2>⚖️ Vos droits (RGPD)</h2>
-            <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
+            <h2 data-fr="⚖️ Vos droits (RGPD)" data-en="⚖️ Your Rights (GDPR)">⚖️ Vos droits (RGPD)</h2>
+            <p data-fr="Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :" data-en="Under the General Data Protection Regulation (GDPR), you have the following rights:">Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
             <ul>
-                <li><strong>Droit d'accès</strong> : Obtenir une copie de vos données personnelles</li>
-                <li><strong>Droit de rectification</strong> : Corriger vos données inexactes</li>
-                <li><strong>Droit à l'effacement</strong> : Supprimer votre compte et toutes vos données</li>
-                <li><strong>Droit à la portabilité</strong> : Exporter vos données dans un format standard</li>
-                <li><strong>Droit d'opposition</strong> : Vous opposer au traitement de vos données</li>
+                <li data-fr="<strong>Droit d'accès</strong> : Obtenir une copie de vos données personnelles" data-en="<strong>Right of access</strong>: Obtain a copy of your personal data"><strong>Droit d'accès</strong> : Obtenir une copie de vos données personnelles</li>
+                <li data-fr="<strong>Droit de rectification</strong> : Corriger vos données inexactes" data-en="<strong>Right to rectification</strong>: Correct inaccurate data"><strong>Droit de rectification</strong> : Corriger vos données inexactes</li>
+                <li data-fr="<strong>Droit à l'effacement</strong> : Supprimer votre compte et toutes vos données" data-en="<strong>Right to erasure</strong>: Delete your account and all your data"><strong>Droit à l'effacement</strong> : Supprimer votre compte et toutes vos données</li>
+                <li data-fr="<strong>Droit à la portabilité</strong> : Exporter vos données dans un format standard" data-en="<strong>Right to portability</strong>: Export your data in a standard format"><strong>Droit à la portabilité</strong> : Exporter vos données dans un format standard</li>
+                <li data-fr="<strong>Droit d'opposition</strong> : Vous opposer au traitement de vos données" data-en="<strong>Right to object</strong>: Object to the processing of your data"><strong>Droit d'opposition</strong> : Vous opposer au traitement de vos données</li>
             </ul>
 
             <div class="contact-box">
-                <p>Pour exercer ces droits, contactez-nous à : <a href="mailto:contact.flightlog@gmail.com">contact.flightlog@gmail.com</a></p>
+                <p data-fr="Pour exercer ces droits, contactez-nous à : <a href='mailto:contact.flightlog@gmail.com'>contact.flightlog@gmail.com</a>" data-en="To exercise these rights, contact us at: <a href='mailto:contact.flightlog@gmail.com'>contact.flightlog@gmail.com</a>">Pour exercer ces droits, contactez-nous à : <a href="mailto:contact.flightlog@gmail.com">contact.flightlog@gmail.com</a></p>
             </div>
         </div>
 
         <div class="card">
-            <h2>🗑️ Suppression des données</h2>
-            <p>Vous pouvez supprimer votre compte et toutes vos données à tout moment depuis l'application :</p>
+            <h2 data-fr="🗑️ Suppression des données" data-en="🗑️ Data Deletion">🗑️ Suppression des données</h2>
+            <p data-fr="Vous pouvez supprimer votre compte et toutes vos données à tout moment depuis l'application :" data-en="You can delete your account and all your data at any time from the app:">Vous pouvez supprimer votre compte et toutes vos données à tout moment depuis l'application :</p>
             <ul>
-                <li>Accédez à Profil > Paramètres</li>
-                <li>Sélectionnez "Supprimer mon compte"</li>
-                <li>Confirmez la suppression</li>
+                <li data-fr="Accédez à Profil > Paramètres" data-en="Go to Profile > Settings">Accédez à Profil > Paramètres</li>
+                <li data-fr="Sélectionnez \"Supprimer mon compte\"" data-en="Select \"Delete my account\"">Sélectionnez "Supprimer mon compte"</li>
+                <li data-fr="Confirmez la suppression" data-en="Confirm deletion">Confirmez la suppression</li>
             </ul>
 
             <div class="warning-box">
-                <p>⚠️ Cette action est irréversible. Toutes vos données seront définitivement supprimées de nos serveurs.</p>
+                <p data-fr="⚠️ Cette action est irréversible. Toutes vos données seront définitivement supprimées de nos serveurs." data-en="⚠️ This action is irreversible. All your data will be permanently deleted from our servers.">⚠️ Cette action est irréversible. Toutes vos données seront définitivement supprimées de nos serveurs.</p>
             </div>
         </div>
 
         <div class="card">
-            <h2>👶 Protection des mineurs</h2>
-            <p>FlightLog n'est pas destinée aux enfants de moins de 13 ans. Nous ne collectons pas sciemment de données personnelles concernant des enfants de moins de 13 ans.</p>
+            <h2 data-fr="👶 Protection des mineurs" data-en="👶 Protection of Minors">👶 Protection des mineurs</h2>
+            <p data-fr="FlightLog n'est pas destinée aux enfants de moins de 13 ans. Nous ne collectons pas sciemment de données personnelles concernant des enfants de moins de 13 ans." data-en="FlightLog is not intended for children under 13 years of age. We do not knowingly collect personal data from children under 13.">FlightLog n'est pas destinée aux enfants de moins de 13 ans. Nous ne collectons pas sciemment de données personnelles concernant des enfants de moins de 13 ans.</p>
         </div>
 
         <div class="card">
-            <h2>📝 Modifications</h2>
-            <p>Nous nous réservons le droit de modifier cette politique de confidentialité. En cas de modification substantielle, nous vous en informerons via l'application ou par email.</p>
-            <p>Nous vous encourageons à consulter régulièrement cette page pour prendre connaissance de toute mise à jour.</p>
+            <h2 data-fr="📝 Modifications" data-en="📝 Changes">📝 Modifications</h2>
+            <p data-fr="Nous nous réservons le droit de modifier cette politique de confidentialité. En cas de modification substantielle, nous vous en informerons via l'application ou par email." data-en="We reserve the right to modify this privacy policy. In case of substantial changes, we will notify you via the app or by email.">Nous nous réservons le droit de modifier cette politique de confidentialité. En cas de modification substantielle, nous vous en informerons via l'application ou par email.</p>
+            <p data-fr="Nous vous encourageons à consulter régulièrement cette page pour prendre connaissance de toute mise à jour." data-en="We encourage you to regularly check this page for any updates.">Nous vous encourageons à consulter régulièrement cette page pour prendre connaissance de toute mise à jour.</p>
         </div>
 
         <div class="card">
-            <h2>📧 Contact</h2>
-            <p>Pour toute question concernant cette politique de confidentialité ou vos données personnelles, vous pouvez nous contacter :</p>
+            <h2 data-fr="📧 Contact" data-en="📧 Contact">📧 Contact</h2>
+            <p data-fr="Pour toute question concernant cette politique de confidentialité ou vos données personnelles, vous pouvez nous contacter :" data-en="For any questions regarding this privacy policy or your personal data, you can contact us:">Pour toute question concernant cette politique de confidentialité ou vos données personnelles, vous pouvez nous contacter :</p>
 
             <div class="contact-box">
                 <p><strong>Email</strong> : <a href="mailto:contact.flightlog@gmail.com">contact.flightlog@gmail.com</a></p>
@@ -340,10 +388,28 @@
     </div>
 
     <footer>
-        <p>© 2024 FlightLog. Tous droits réservés.</p>
+        <p>© 2024 FlightLog. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
         <p style="margin-top: 10px;">
             <a href="support.html">Support</a>
         </p>
     </footer>
+
+    <script>
+        function setLang(lang) {
+            localStorage.setItem('flightlog-lang', lang);
+            document.documentElement.lang = lang;
+
+            document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+        }
+
+        const savedLang = localStorage.getItem('flightlog-lang') ||
+                         (navigator.language.startsWith('fr') ? 'fr' : 'en');
+        setLang(savedLang);
+    </script>
 </body>
 </html>
