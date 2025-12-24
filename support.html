@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - FlightLog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #f1f5f9;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .contact-info h3 {
+            font-size: 1.1rem;
+            color: #f1f5f9;
+            margin-bottom: 5px;
+        }
+
+        .contact-info a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-item:first-child {
+            padding-top: 0;
+        }
+
+        .faq-item h3 {
+            color: #f1f5f9;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            color: #94a3b8;
+            margin-bottom: 0;
+        }
+
+        .response-time {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .contact-method {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">✈️</div>
+            <h1>Support FlightLog</h1>
+            <p class="subtitle">Nous sommes là pour vous aider</p>
+        </header>
+
+        <div class="card">
+            <h2>📧 Contactez-nous</h2>
+            <p>Notre équipe de support est disponible pour répondre à toutes vos questions concernant l'application FlightLog.</p>
+
+            <div class="contact-method">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-info">
+                    <h3>Email</h3>
+                    <a href="mailto:contact.flightlog@gmail.com">contact.flightlog@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="response-time">⏱️ Réponse sous 24-48h</div>
+        </div>
+
+        <div class="card">
+            <h2>❓ Questions fréquentes</h2>
+
+            <div class="faq-item">
+                <h3>Comment ajouter un vol manuellement ?</h3>
+                <p>Depuis l'onglet "Journal", appuyez sur le bouton "+" en bas à droite. Vous pouvez entrer les aéroports de départ et d'arrivée, la date, et d'autres informations sur votre vol.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Comment scanner une carte d'embarquement ?</h3>
+                <p>Utilisez le bouton scanner dans l'application pour photographier le code-barres de votre carte d'embarquement. Les informations du vol seront automatiquement extraites.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Mes données sont-elles sécurisées ?</h3>
+                <p>Oui, vos données sont stockées de manière sécurisée et chiffrée. Nous ne partageons jamais vos informations personnelles avec des tiers. Consultez notre <a href="privacy.html">Politique de Confidentialité</a> pour plus de détails.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Comment supprimer mon compte ?</h3>
+                <p>Vous pouvez supprimer votre compte depuis les paramètres de l'application (Profil > Paramètres > Supprimer mon compte). Cette action est irréversible et supprimera toutes vos données.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>L'application fonctionne-t-elle hors ligne ?</h3>
+                <p>Oui, vous pouvez consulter vos vols enregistrés hors ligne. La synchronisation se fera automatiquement lorsque vous serez à nouveau connecté à Internet.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🐛 Signaler un bug</h2>
+            <p>Vous avez rencontré un problème technique ? Envoyez-nous un email avec :</p>
+            <ul style="color: #cbd5e1; margin-left: 20px; margin-top: 10px;">
+                <li>Une description du problème</li>
+                <li>Les étapes pour reproduire le bug</li>
+                <li>Votre modèle d'appareil et version iOS</li>
+                <li>Une capture d'écran si possible</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 FlightLog. Tous droits réservés.</p>
+        <p style="margin-top: 10px;">
+            <a href="privacy.html">Politique de Confidentialité</a>
+        </p>
+    </footer>
+</body>
+</html>
